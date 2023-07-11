@@ -6,7 +6,7 @@ Cecilo Sanchez's JavaScript Portfolio.
 
 ## Description
 
-A JavaScript coding exercise to bounce 9 balls around a well limited space.
+A JavaScript coding exercise to bounce 8 balls around a well limited space.
 
 ## How to run
 
