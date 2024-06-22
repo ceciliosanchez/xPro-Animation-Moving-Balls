@@ -1,6 +1,6 @@
 # Project for MIT xPro Full Stack Developer course
 
-## Moving Balls with Cloud Background
+## Moving Balls
 
 This project demonstrates how to create animated balls in JavaScript that move around the screen with a colorful appearance against a cloud-effect background.
 
@@ -19,7 +19,7 @@ ball.js: Initializes and animates the balls.
 ## How to run
 
 Clone the repository.
-Open index.html in a web browser.
+Open moving_balls.html in a web browser.
 
 ## Support
 
