@@ -12,8 +12,8 @@ A cloud-effect background enhances the visual experience.
 
 ## Files
 
-index.html: Main HTML file that includes the canvas and scripts.
-magic.js: Contains functions to create and manipulate ball elements.
+moving_balls.html: Main HTML file that includes the canvas and scripts.</br>
+magic.js: Contains functions to create and manipulate ball elements.</br>
 ball.js: Initializes and animates the balls.
 
 ## How to run
