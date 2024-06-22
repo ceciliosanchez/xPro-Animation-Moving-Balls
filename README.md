@@ -1,22 +1,30 @@
 # Project for MIT xPro Full Stack Developer course
 
-## Moving Balls
+## Moving Balls with Cloud Background
 
-Cecilo Sanchez's JavaScript Portfolio.
+This project demonstrates how to create animated balls in JavaScript that move around the screen with a colorful appearance against a cloud-effect background.
 
-## Description
+## Functionality
 
-A JavaScript coding exercise to bounce 8 balls around a well limited space.
+Balls start from the top-left corner and move randomly.
+Bright, saturated colors make the balls visually appealing.
+A cloud-effect background enhances the visual experience.
+
+## Files
+
+index.html: Main HTML file that includes the canvas and scripts.
+magic.js: Contains functions to create and manipulate ball elements.
+ball.js: Initializes and animates the balls.
 
 ## How to run
 
-The balls will start to bounce automatically.
+Clone the repository.
+Open index.html in a web browser.
 
 ## Support
 
 Reach out at http://ceciliosanchez.com/contact/
 
-## License information
+## License
 
-MIT License
-
+This project is licensed under the MIT License.
