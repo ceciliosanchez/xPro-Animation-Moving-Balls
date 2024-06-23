@@ -2,7 +2,7 @@
 
 ## Moving Balls
 
-This project demonstrates how to create animated balls in JavaScript that move around the screen with a colorful appearance against a cloud-effect background.
+This project demonstrates how to create animated balls in JavaScript that move around the screen with a colorful appearance against an ocean backdrop.
 
 ## Functionality
 
