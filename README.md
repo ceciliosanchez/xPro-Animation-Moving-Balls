@@ -8,7 +8,7 @@ This project demonstrates how to create animated balls in JavaScript that move a
 
 Balls start from the top-left corner and move randomly.
 Bright, saturated colors make the balls visually appealing.
-A cloud-effect background enhances the visual experience.
+A deep ocean backdrop enhances the visual experience.
 
 ## Files
 
