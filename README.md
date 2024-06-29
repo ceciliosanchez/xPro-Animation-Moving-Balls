@@ -18,8 +18,9 @@ ball.js: Initializes and animates the balls.
 
 ## How to run
 
-Clone the repository.
-Open moving_balls.html in a web browser.
+Clone the repository.</br>
+Open moving_balls.html in a web browser.</br>
+Preview: <a href="https://ceciliosanchez.com/github/xpro/moving_balls/ball.html" target="_blank">Moving Balls</a>
 
 ## Support
 
