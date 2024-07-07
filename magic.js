@@ -5,12 +5,14 @@ var create = function(){
     var width = window.innerWidth;
     var height = window.innerHeight;
 
-
     // random color
-    var r = Math.floor(275*(Math.random()));
-    var g = Math.floor(275*(Math.random()));
-    var b = Math.floor(275*(Math.random()));        
+    var r = Math.floor(275 * Math.random());
+    var g = Math.floor(275 * Math.random());
+    var b = Math.floor(275 * Math.random());
     var color = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+
+    // random opacity between 0.8 and 1
+    var opacity = Math.random() * 0.4 + 0.6;
 
     // set div attributes
     var div = document.createElement('div');
@@ -22,7 +24,8 @@ var create = function(){
     div.style.width = '50px';    
     div.style.height = '50px';    
     div.style.borderRadius = '50%';
-    div.style.background = color;    
+    div.style.background = color;
+    div.style.opacity = opacity; // Set the random opacity
 
     // Then append the whole thing onto the body
     document.getElementsByTagName('body')[0].appendChild(div);
@@ -58,17 +61,16 @@ var colorRandom = function(div){
 
         setTimeout(function(){
             // random color
-            var r = Math.floor(155*(Math.random()));
-            var g = Math.floor(155*(Math.random()));
-            var b = Math.floor(155*(Math.random()));        
+            var r = Math.floor(155 * Math.random());
+            var g = Math.floor(155 * Math.random());
+            var b = Math.floor(155 * Math.random());        
             var color = 'rgb(' + r + ', ' + g + ', ' + b + ')';
             div.style.background = color; 
             timerColor(div);
-        },500);
+        }, 500);
     }
     timerColor(div);
 }
-
 
 var move = function(div, x, y){
 
@@ -89,9 +91,9 @@ var repeatMove = function(div, x, y, limit){
         counter += 1;
 
         setTimeout(function(){
-            move(div,x,y);
-            timerMove(div,x,y);
-        },1000);
+            move(div, x, y);
+            timerMove(div, x, y);
+        }, 1000);
     }
-    timerMove(div,x,y);
-}    
+    timerMove(div, x, y);
+}
