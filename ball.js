@@ -1,44 +1,95 @@
-// Wait until the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", function() {
-    var balls = [];
-    var numberOfBalls = 20;
+var create = function(){
+    // random x and y
+    var x = 0; // Start at the top-left corner
+    var y = 0; // Start at the top-left corner
+    var width = window.innerWidth;
+    var height = window.innerHeight; 
 
-    function Ball() {
-        var ball = create();
-        this.element = ball;
-        this.dx = Math.random() * 4 + 1; // Random speed between 1 and 5
-        this.dy = Math.random() * 4 + 1; // Random speed between 1 and 5
+    // random color
+    var r = Math.floor(275 * Math.random());
+    var g = Math.floor(275 * Math.random());
+    var b = Math.floor(275 * Math.random());
+    var color = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+
+    // set div attributes
+    var div = document.createElement('div');
+    div.id = 'ball';
+    div.style.zIndex = '1';
+    div.style.position = 'absolute';    
+    div.style.left = x + 'px';    
+    div.style.top = y + 'px';    
+    div.style.width = '50px';    
+    div.style.height = '50px';    
+    div.style.borderRadius = '50%';
+    div.style.background = `radial-gradient(circle, rgba(${r},${g},${b},0.5), rgba(${r},${g},${b},1))`;
+
+    // Then append the whole thing onto the body
+    document.getElementsByTagName('body')[0].appendChild(div);
+
+    // default start position
+    div.x = x;
+    div.y = y;
+    return div;        
+}
+
+var size = function(div, width, height){
+    div.style.width = width + 'px';    
+    div.style.height = height + 'px';    
+}
+
+var color = function(div, r, g, b){
+    var color = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+    div.style.background = `radial-gradient(circle, rgba(${r},${g},${b},1), rgba(${r},${g},${b},1))`;
+}
+
+var zIndex = function(div, zIndex){
+    div.style.zIndex = zIndex.toString(); 
+}
+
+var colorRandom = function(div){
+
+    var counter = 0;
+    var limit = 10;
+
+    var timerColor = function(div, x, y){
+        if(counter >= limit) return;
+        counter += 1;
+
+        setTimeout(function(){
+            // random color
+            var r = Math.floor(155 * Math.random());
+            var g = Math.floor(155 * Math.random());
+            var b = Math.floor(155 * Math.random());        
+            var color = `radial-gradient(circle, rgba(${r},${g},${b},0.2), rgba(${r},${g},${b},1))`;
+            div.style.background = color; 
+            timerColor(div);
+        }, 500);
     }
+    timerColor(div);
+}
 
-    Ball.prototype.updatePosition = function() {
-        var x = this.element.x;
-        var y = this.element.y;
+var move = function(div, x, y){
 
-        x += this.dx;
-        y += this.dy;
+    // add x coordinate
+    div.x = div.x + x;
+    div.style.left = div.x + 'px';
 
-        if (x <= 0 || x >= window.innerWidth - 50) {
-            this.dx = -this.dx;
-        }
-        if (y <= 0 || y >= window.innerHeight - 50) {
-            this.dy = -this.dy;
-        }
+    // add y coordinate
+    div.y = div.y + y;
+    div.style.top = div.y + 'px';                  
+}
 
-        move(this.element, this.dx, this.dy);
+var repeatMove = function(div, x, y, limit){
+    var counter = 0;
 
-        this.element.x = x;
-        this.element.y = y;
+    var timerMove = function(div, x, y){
+        if(counter >= limit) return;
+        counter += 1;
+
+        setTimeout(function(){
+            move(div, x, y);
+            timerMove(div, x, y);
+        }, 1000);
     }
-
-    for (var i = 0; i < numberOfBalls; i++) {
-        balls.push(new Ball());
-    }
-
-    function updateAllPositions() {
-        balls.forEach(function(ball) {
-            ball.updatePosition();
-        });
-    }
-
-    setInterval(updateAllPositions, 10);
-});
+    timerMove(div, x, y);
+}
