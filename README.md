@@ -19,7 +19,7 @@ This project demonstrates how to create animated balls in JavaScript that move a
 ## How to run
 
 1. Clone the repository.
-2. Open moving_balls.html in a web browser.
+2. Open `moving_balls.html` in a web browser.
 3. Preview: <a href="https://ceciliosanchez.com/github/xpro/moving_balls/ball.html" target="_blank">Moving Balls![Animation Screenshot](img/screenshot.png)</a>
 
 ## Support
